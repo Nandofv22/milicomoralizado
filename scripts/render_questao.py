@@ -14,10 +14,8 @@ DATA_PATH = os.path.join(ROOT, "data", "questoes.json")
 TEMPLATE_PATH = os.path.join(ROOT, "assets", "template_questao.png")
 OUTPUT_DIR = os.path.join(ROOT, "output")
 
-GOLD = (232, 184, 75)
-NAVY_TEXT = (10, 17, 40)
-LIGHT = (235, 235, 235)
-DIM = (190, 190, 190)
+WHITE = (245, 245, 245)
+DIM = (185, 185, 190)
 
 W, H = 1080, 1350
 
@@ -39,51 +37,28 @@ def render(item):
     img = Image.open(TEMPLATE_PATH).convert("RGB")
     draw = ImageDraw.Draw(img)
 
-    title_font = load_font("title", 50)
-    draw_centered_multiline(draw, ["QUESTAO DO DIA"], title_font, W / 2, 145, 0, GOLD)
+    handle_font = load_font("semibold", 34)
+    draw_centered_multiline(draw, ["@milicomoralizado"], handle_font, W / 2, 55, 0, WHITE)
+
+    kicker_font = load_font("title", 42)
+    draw_centered_multiline(draw, ["QUESTAO DO DIA"], kicker_font, W / 2, 290, 0, WHITE)
 
     tag_font = load_font("semibold", 26)
-    materia_upper = item["materia"].upper()
-    draw_centered_multiline(draw, [materia_upper], tag_font, W / 2, 205, 0, DIM)
+    draw_centered_multiline(draw, [item["materia"].upper()], tag_font, W / 2, 340, 0, DIM)
 
-    panel_left, panel_top, panel_right, panel_bottom = 120, 415, W - 120, 725
+    zone_top, zone_bottom = 410, 790
     font, lines, line_h = fit_text(
-        draw,
-        item["enunciado"],
-        "semibold",
-        panel_right - panel_left,
-        panel_bottom - panel_top,
-        44,
-        24,
+        draw, item["afirmacao"], "bold", W - 200, zone_bottom - zone_top, 52, 30
     )
     block_h = line_h * len(lines)
-    start_y = panel_top + (panel_bottom - panel_top - block_h) / 2
-    draw_centered_multiline(draw, lines, font, W / 2, start_y, line_h, LIGHT)
+    start_y = zone_top + (zone_bottom - zone_top - block_h) / 2
+    draw_centered_multiline(draw, lines, font, W / 2, start_y, line_h, WHITE)
 
-    slot_h, gap, top = 96, 22, 820
-    letters = ["A", "B", "C", "D"]
-    for i, letter in enumerate(letters):
-        y0 = top + i * (slot_h + gap)
-        cy = y0 + slot_h / 2
-        bcx, br = 145, 27
-        draw.ellipse([bcx - br, cy - br, bcx + br, cy + br], fill=GOLD)
-        letter_font = load_font("title", 32)
-        bbox = draw.textbbox((0, 0), letter, font=letter_font)
-        lw, lh = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        draw.text((bcx - lw / 2 - bbox[0], cy - lh / 2 - bbox[1]), letter, font=letter_font, fill=NAVY_TEXT)
+    vf_font = load_font("title", 40)
+    draw_centered_multiline(draw, ["VERDADEIRO OU FALSO?"], vf_font, W / 2, 878, 0, WHITE)
 
-        alt_text = item["alternativas"][letter]
-        afont, alines, aline_h = fit_text(
-            draw, alt_text, "semibold", W - 120 - 195, slot_h - 16, 30, 18, step=1
-        )
-        ablock_h = aline_h * len(alines)
-        ay = cy - ablock_h / 2
-        draw_centered_multiline(
-            draw, alines, afont, 0, ay, aline_h, LIGHT, align="left", box_left=195
-        )
-
-    handle_font = load_font("semibold", 24)
-    draw_centered_multiline(draw, ["@milicomoralizado"], handle_font, W / 2, H - 78, 0, GOLD)
+    cta_font = load_font("bold", 30)
+    draw_centered_multiline(draw, ["COMENTA AQUI: V OU F"], cta_font, W / 2, H - 110, 0, WHITE)
 
     return img
 
@@ -91,16 +66,17 @@ def render(item):
 def build_caption(item):
     tag = HASHTAGS_BY_MATERIA.get(item["materia"], "")
     return (
-        f"\U0001F4DA QUESTAO DO DIA — {item['materia']}\n\n"
-        "Responda nos comentarios com a letra da alternativa correta (A, B, C ou D).\n"
-        "O gabarito comentado sai logo ali embaixo, nos comentarios!\n\n"
+        f"\U0001F480 QUESTAO DO DIA — {item['materia']}\n\n"
+        "Comenta aqui embaixo: VERDADEIRO ou FALSO?\n"
+        "O gabarito comentado sai logo nos comentarios!\n\n"
         f"{HASHTAGS_BASE} {tag}"
     )
 
 
 def build_comment(item):
+    veredito = "VERDADEIRO" if item["correta"] else "FALSO"
     return (
-        f"✅ Gabarito: {item['gabarito']}) {item['alternativas'][item['gabarito']]}\n"
+        f"✅ Gabarito: {veredito}\n"
         f"\U0001F4D6 Base legal: {item['base_legal']}\n"
         f"{item['explicacao']}"
     )

@@ -1,6 +1,7 @@
 import math
 import os
 
+import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -9,153 +10,99 @@ os.makedirs(ASSETS_DIR, exist_ok=True)
 
 W, H = 1080, 1350
 
-NAVY_TOP = (10, 17, 40)
-NAVY_BOTTOM = (4, 6, 14)
-GOLD = (232, 184, 75)
-GOLD_DIM = (120, 96, 45)
+BG = (6, 6, 9)
+BLUE = (40, 110, 235)
+RED = (222, 32, 32)
+WHITE = (245, 245, 245)
 
 
-def vertical_gradient(w, h, top, bottom):
-    img = Image.new("RGB", (w, h), top)
-    px = img.load()
-    for y in range(h):
-        t = y / (h - 1)
-        r = int(top[0] + (bottom[0] - top[0]) * t)
-        g = int(top[1] + (bottom[1] - top[1]) * t)
-        b = int(top[2] + (bottom[2] - top[2]) * t)
-        for x in range(w):
-            px[x, y] = (r, g, b)
-    return img
+def add_grain(img_rgb, amount=7):
+    arr = np.array(img_rgb).astype(np.int16)
+    noise = np.random.randint(-amount, amount + 1, arr.shape[:2] + (1,))
+    arr = np.clip(arr + noise, 0, 255).astype(np.uint8)
+    return Image.fromarray(arr, "RGB")
 
 
-def add_vignette(img, strength=110):
-    w, h = img.size
-    vig = Image.new("L", (w, h), 0)
-    vd = ImageDraw.Draw(vig)
-    cx, cy = w / 2, h / 2
-    max_r = math.hypot(cx, cy)
-    steps = 60
-    for i in range(steps):
-        t = i / steps
-        r = max_r * (1 - t)
-        alpha = int(strength * t)
-        vd.ellipse([cx - r, cy - r, cx + r, cy + r], fill=alpha)
-    vig = vig.filter(ImageFilter.GaussianBlur(80))
-    dark = Image.new("RGB", (w, h), (0, 0, 0))
-    return Image.composite(dark, img, Image.eval(vig, lambda p: 255 - p))
-
-
-def draw_star(draw, cx, cy, r_outer, r_inner, fill=None, outline=None, width=2):
-    points = []
-    for i in range(10):
-        angle = math.pi / 2 + i * math.pi / 5
-        r = r_outer if i % 2 == 0 else r_inner
-        points.append((cx + r * math.cos(angle), cy - r * math.sin(angle)))
-    draw.polygon(points, fill=fill, outline=outline, width=width)
-
-
-def rounded_rect(draw, box, radius, outline, width, fill=None):
-    draw.rounded_rectangle(box, radius=radius, outline=outline, width=width, fill=fill)
-
-
-def gold_rgba(alpha):
-    return (GOLD[0], GOLD[1], GOLD[2], alpha)
+def add_corner_glow(base_rgba, color, cx, cy, radius, alpha, blur):
+    glow = Image.new("RGBA", base_rgba.size, (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    gd.ellipse([cx - radius, cy - radius, cx + radius, cy + radius], fill=color + (alpha,))
+    glow = glow.filter(ImageFilter.GaussianBlur(blur))
+    return Image.alpha_composite(base_rgba, glow)
 
 
 def base_canvas():
-    base = vertical_gradient(W, H, NAVY_TOP, NAVY_BOTTOM)
-    base = add_vignette(base, strength=130)
-    img = base.convert("RGBA")
+    img = Image.new("RGB", (W, H), BG)
+    img = add_grain(img, amount=6)
+    rgba = img.convert("RGBA")
 
-    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    od = ImageDraw.Draw(overlay)
+    # siren-light glows: blue bleeding from top-right, red bleeding from bottom-left
+    rgba = add_corner_glow(rgba, BLUE, W * 1.02, -H * 0.05, radius=W * 0.62, alpha=150, blur=170)
+    rgba = add_corner_glow(rgba, RED, -W * 0.05, H * 1.05, radius=W * 0.62, alpha=140, blur=170)
+    # secondary tighter, brighter cores for a bit of realism
+    rgba = add_corner_glow(rgba, BLUE, W * 0.98, H * 0.02, radius=W * 0.22, alpha=110, blur=90)
+    rgba = add_corner_glow(rgba, RED, W * 0.02, H * 0.98, radius=W * 0.22, alpha=100, blur=90)
 
-    # outer thin gold frame
-    margin = 42
-    od.rectangle(
-        [margin, margin, W - margin, H - margin],
-        outline=gold_rgba(150),
-        width=2,
-    )
-    # corner ticks
-    tick = 26
-    for cx0, cy0, dx, dy in [
-        (margin, margin, 1, 1),
-        (W - margin, margin, -1, 1),
-        (margin, H - margin, 1, -1),
-        (W - margin, H - margin, -1, -1),
-    ]:
-        od.line([(cx0, cy0), (cx0 + dx * tick, cy0)], fill=gold_rgba(220), width=3)
-        od.line([(cx0, cy0), (cx0, cy0 + dy * tick)], fill=gold_rgba(220), width=3)
+    return rgba
 
-    # faded watermark star, upper area, large and subtle
-    star_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    sd = ImageDraw.Draw(star_layer)
-    draw_star(sd, W / 2, 250, 230, 95, fill=gold_rgba(16))
-    star_layer = star_layer.filter(ImageFilter.GaussianBlur(2))
-    overlay = Image.alpha_composite(overlay, star_layer)
-    od = ImageDraw.Draw(overlay)
 
-    # small solid accent star, top center, above header text zone
-    draw_star(od, W / 2, 118, 26, 11, fill=gold_rgba(255))
+def skull_mask(size):
+    """Returns an RGBA image of a flat white skull silhouette, size x size."""
+    S = size
+    mask = Image.new("L", (S, S), 0)
+    d = ImageDraw.Draw(mask)
 
-    img = Image.alpha_composite(img, overlay)
-    return img
+    def pt(nx, ny):
+        return (nx * S, ny * S)
+
+    outline = [
+        pt(0.50, 0.00), pt(0.72, 0.03), pt(0.87, 0.14), pt(0.97, 0.34),
+        pt(0.94, 0.52), pt(0.83, 0.60), pt(0.81, 0.70), pt(0.71, 0.79),
+        pt(0.60, 0.85), pt(0.50, 0.80), pt(0.40, 0.85), pt(0.29, 0.79),
+        pt(0.19, 0.70), pt(0.17, 0.60), pt(0.06, 0.52), pt(0.03, 0.34),
+        pt(0.13, 0.14), pt(0.28, 0.03),
+    ]
+    d.polygon(outline, fill=255)
+
+    d.ellipse([pt(0.20, 0.32)[0], pt(0.20, 0.32)[1], pt(0.44, 0.56)[0], pt(0.44, 0.56)[1]], fill=0)
+    d.ellipse([pt(0.56, 0.32)[0], pt(0.56, 0.32)[1], pt(0.80, 0.56)[0], pt(0.80, 0.56)[1]], fill=0)
+    d.polygon([pt(0.50, 0.56), pt(0.46, 0.66), pt(0.54, 0.66)], fill=0)
+    for tx in (0.37, 0.46, 0.55, 0.64):
+        d.rectangle([pt(tx, 0.74)[0], pt(tx, 0.74)[1], pt(tx + 0.02, 0.83)[0], pt(tx + 0.02, 0.83)[1]], fill=0)
+
+    rgba = Image.new("RGBA", (S, S), WHITE + (255,))
+    rgba.putalpha(mask)
+    return rgba
+
+
+def draw_skull(base_rgba, cx, cy, height):
+    S = int(height / 0.85)
+    skull = skull_mask(S).resize((S, S), Image.LANCZOS)
+    x = int(cx - S / 2)
+    y = int(cy - S / 2)
+    base_rgba.paste(skull, (x, y), skull)
+
+
+def rounded_panel(base_rgba, box, radius, fill_alpha=30, outline_alpha=70):
+    layer = Image.new("RGBA", base_rgba.size, (0, 0, 0, 0))
+    ld = ImageDraw.Draw(layer)
+    ld.rounded_rectangle(box, radius=radius, fill=(255, 255, 255, fill_alpha), outline=(255, 255, 255, outline_alpha), width=2)
+    return Image.alpha_composite(base_rgba, layer)
 
 
 def make_questao_template():
     img = base_canvas()
-    od = ImageDraw.Draw(img)
+    draw_skull(img, W / 2, 200, 150)
 
-    # header divider
-    od.line([(140, 190), (W - 140, 190)], fill=gold_rgba(150), width=2)
-
-    # question panel outline (text drawn later by render script)
-    panel_box = [90, 380, W - 90, 760]
-    rounded_rect(od, panel_box, radius=22, outline=gold_rgba(210), width=3)
-
-    # 4 alternative slots
-    slot_h = 96
-    gap = 22
-    top = 820
-    for i in range(4):
-        y0 = top + i * (slot_h + gap)
-        y1 = y0 + slot_h
-        rounded_rect(od, [90, y0, W - 90, y1], radius=16, outline=gold_rgba(150), width=2)
-
-    # footer divider + watermark zone marker
-    od.line([(140, H - 90), (W - 140, H - 90)], fill=gold_rgba(120), width=2)
+    # panel behind the "Verdadeiro ou Falso?" callout
+    img = rounded_panel(img, [230, 840, W - 230, 960], radius=24)
 
     img.convert("RGB").save(os.path.join(ASSETS_DIR, "template_questao.png"))
 
 
 def make_frase_template():
     img = base_canvas()
-    od = ImageDraw.Draw(img)
-
-    od.line([(140, 190), (W - 140, 190)], fill=gold_rgba(150), width=2)
-
-    # soft radial glow behind quote area
-    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    gd = ImageDraw.Draw(glow)
-    gd.ellipse([W / 2 - 420, 560 - 260, W / 2 + 420, 560 + 260], fill=gold_rgba(22))
-    glow = glow.filter(ImageFilter.GaussianBlur(120))
-    img = Image.alpha_composite(img, glow)
-    od = ImageDraw.Draw(img)
-
-    # stylized quote-mark accent (two comma-like blobs, drawn as shapes)
-    for dx in (-46, 6):
-        cx = W / 2 + dx
-        od.ellipse([cx, 300, cx + 26, 326], fill=gold_rgba(200))
-        od.polygon(
-            [(cx, 313), (cx + 26, 300), (cx + 10, 350)],
-            fill=gold_rgba(200),
-        )
-
-    # divider line above the quote text zone
-    od.line([(220, 470), (W - 220, 470)], fill=gold_rgba(160), width=2)
-
-    od.line([(140, H - 90), (W - 140, H - 90)], fill=gold_rgba(120), width=2)
+    draw_skull(img, W / 2, 200, 150)
 
     img.convert("RGB").save(os.path.join(ASSETS_DIR, "template_frase.png"))
 
