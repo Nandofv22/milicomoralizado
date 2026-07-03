@@ -3,8 +3,9 @@ import time
 
 import requests
 
-GRAPH_API_VERSION = os.environ.get("GRAPH_API_VERSION", "v21.0")
-GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
+GRAPH_API_VERSION = os.environ.get("GRAPH_API_VERSION", "v25.0")
+GRAPH_API_HOST = os.environ.get("GRAPH_API_HOST", "https://graph.instagram.com")
+GRAPH_BASE = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}"
 
 
 class InstagramApiError(RuntimeError):

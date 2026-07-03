@@ -5,53 +5,41 @@ Automação de 2 posts diários no Instagram [@milicomoralizado](https://www.ins
 - **09h (BRT)** — frase motivacional para concurseiros de carreiras policiais.
 - **19h (BRT)** — questão de concurso (Direito Penal, Direito Constitucional, Processo Penal e Legislação da PMBA).
 
-O conteúdo vem de um banco curado (`data/questoes.json`, `data/frases.json`), renderizado sobre uma arte fixa (`assets/template_*.png`) com [Pillow](https://python-pillow.org/), e publicado via **Instagram Graph API** (rota oficial, dentro dos Termos de Uso). O agendamento roda no **GitHub Actions**, sem depender de nenhum computador ligado.
+O conteúdo vem de um banco curado (`data/questoes.json`, `data/frases.json`), renderizado sobre uma arte fixa (`assets/template_*.png`) com [Pillow](https://python-pillow.org/), e publicado via **Instagram API with Instagram Login** (rota oficial, dentro dos Termos de Uso — não exige Página do Facebook, funciona direto com conta Criador ou Empresa). O agendamento roda no **GitHub Actions**, sem depender de nenhum computador ligado.
 
 ## Checklist de setup (só você consegue fazer isso)
 
-### 1. Converter a conta para Business
+### 1. Conta profissional
 
-No app do Instagram → Configurações → Conta → Mudar para conta profissional → **Empresa** (categoria "Educação" ou similar). Aceite a criação/vínculo de uma Página do Facebook quando for solicitado.
+Sua conta já é **Criador (Creator)** — isso é suficiente, não precisa virar Empresa nem vincular Página do Facebook (a "Instagram API with Instagram Login" funciona direto com conta Criador).
 
 ### 2. Criar o App na Meta
 
-1. Acesse [developers.facebook.com](https://developers.facebook.com/apps) → **Meus Apps → Criar App** → tipo "Negócios".
-2. No painel do app, adicione o produto **Instagram Graph API** (Adicionar Produto → Instagram → Configurar).
-3. Em **Funções do App → Funções → Testadores do Instagram**, adicione @milicomoralizado como testador (isso permite publicar em modo de desenvolvimento, sem precisar passar pelo App Review, já que é uso próprio).
-4. Aceite o convite de testador dentro do próprio app do Instagram (Configurações → Apps e sites → Convites de testador).
+1. Acesse [developers.facebook.com](https://developers.facebook.com/apps) → **Meus Apps → Criar App** → tipo **Negócios**.
+2. No painel do app, adicione o produto **Instagram API with Instagram Login** (Adicionar Produto → procure "Instagram" → Configurar).
+3. Dentro do produto, vá em **API setup with Instagram login** → siga o passo de adicionar sua conta @milicomoralizado como conta de teste/autorizada (ele te dá um link para logar com o Instagram e autorizar o app — usa o login do próprio Instagram, sem Facebook).
 
-### 3. Gerar o token de acesso
+### 3. Gerar o token de acesso e pegar o IG_USER_ID
 
-1. Abra o [Graph API Explorer](https://developers.facebook.com/tools/explorer), selecione o seu App.
-2. Em "Permissions", marque: `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `pages_show_list`, `pages_read_engagement`, `business_management`.
-3. Clique em "Generate Access Token" e autorize.
-4. Troque o token de curta duração por um de longa duração (60 dias), rodando localmente (substitua `APP_ID`, `APP_SECRET` e `SHORT_TOKEN`):
+Ainda na página **Instagram → API setup with Instagram login** do painel do app, tem uma seção "Generate access token" — clique em **Generate token** para a conta @milicomoralizado já conectada. Isso gera um token válido por 60 dias.
 
-   ```bash
-   curl -i -X GET "https://graph.facebook.com/v21.0/oauth/access_token?grant_type=fb_exchange_token&client_id=APP_ID&client_secret=APP_SECRET&fb_exchange_token=SHORT_TOKEN"
-   ```
-
-   O `access_token` retornado é o que vai no secret `IG_ACCESS_TOKEN`.
-
-   > **Manutenção:** esse token expira em ~60 dias. Repita esse passo antes de expirar (a Meta permite renovar antes do vencimento pelo mesmo endpoint). Quando o v1 estiver rodando estável, podemos automatizar esse refresh dentro do próprio workflow.
-
-### 4. Descobrir o IG_USER_ID
+Com esse token, confirme o ID da conta:
 
 ```bash
-curl -i -X GET "https://graph.facebook.com/v21.0/me/accounts?access_token=SEU_TOKEN"
+curl -i -X GET "https://graph.instagram.com/v25.0/me?fields=user_id,username&access_token=SEU_TOKEN"
 ```
 
-Pegue o `id` da Página retornada, depois:
+O `user_id` retornado é o `IG_USER_ID`. O token gerado é o `IG_ACCESS_TOKEN`.
 
-```bash
-curl -i -X GET "https://graph.facebook.com/v21.0/PAGE_ID?fields=instagram_business_account&access_token=SEU_TOKEN"
-```
+> **Manutenção:** esse token expira em ~60 dias. Repita esse passo antes de expirar. Quando o v1 estiver rodando estável, podemos automatizar esse refresh dentro do próprio workflow.
 
-O `instagram_business_account.id` retornado é o `IG_USER_ID`.
+### 4. Permissões de publicação
 
-### 5. Criar o repositório no GitHub e subir o projeto
+Na mesma tela, garanta que o escopo **`instagram_business_content_publish`** (e `instagram_business_basic`) esteja marcado/autorizado — sem isso o token não consegue publicar.
 
-Crie um repositório **público** vazio (precisa ser público para o `raw.githubusercontent.com` servir as imagens sem autenticação — nenhum segredo fica versionado, tokens ficam só em Secrets). Me passe a URL para eu configurar o remote e dar push.
+### 5. Repositório no GitHub
+
+✅ Já feito: [github.com/Nandofv22/milicomoralizado](https://github.com/Nandofv22/milicomoralizado) (público, necessário para o `raw.githubusercontent.com` servir as imagens sem autenticação — nenhum segredo fica versionado, tokens ficam só em Secrets).
 
 ### 6. Cadastrar os Secrets
 
