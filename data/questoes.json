@@ -1,0 +1,545 @@
+{
+  "_readme": "Banco curado de questoes estilo concurso, baseado em texto de lei publica (Codigo Penal, CF/88, CPP, Lei 7.990/2001 e Decreto 29.535/1983 da PMBA). Ordem alternada entre materias para variar o assunto a cada post. Para repor o banco quando acabar, peca para gerar um novo lote no mesmo formato.",
+  "questoes": [
+    {
+      "id": 1,
+      "materia": "Direito Penal",
+      "enunciado": "O Codigo Penal estabelece: 'Diz-se o crime: I - doloso, quando o agente quis o resultado ou assumiu o risco de produzi-lo; II - culposo, quando o agente deu causa ao resultado por imprudencia, negligencia ou impericia.' Esse dispositivo esta previsto em qual artigo?",
+      "alternativas": {"A": "Art. 13", "B": "Art. 18", "C": "Art. 20", "D": "Art. 21"},
+      "gabarito": "B",
+      "base_legal": "Art. 18, Codigo Penal",
+      "explicacao": "O Art. 18 do CP define dolo (direto e eventual) e culpa (imprudencia, negligencia ou impericia)."
+    },
+    {
+      "id": 2,
+      "materia": "Direito Constitucional",
+      "enunciado": "Sao fundamentos da Republica Federativa do Brasil, previstos no art. 1º da CF/88, EXCETO:",
+      "alternativas": {"A": "a soberania", "B": "a cidadania", "C": "os valores sociais do trabalho e da livre iniciativa", "D": "a busca da paz mundial"},
+      "gabarito": "D",
+      "base_legal": "Art. 1º, CF/88",
+      "explicacao": "A 'busca da paz' e principio das relacoes internacionais (art. 4º), nao fundamento do art. 1º."
+    },
+    {
+      "id": 3,
+      "materia": "Processo Penal",
+      "enunciado": "A policia judiciaria sera exercida pelas autoridades policiais no territorio de suas respectivas circunscricoes e tera por fim a apuracao das infracoes penais e da sua autoria. Essa definicao consta de qual artigo do CPP?",
+      "alternativas": {"A": "Art. 4º", "B": "Art. 5º", "C": "Art. 6º", "D": "Art. 12"},
+      "gabarito": "A",
+      "base_legal": "Art. 4º, CPP",
+      "explicacao": "O Art. 4º do CPP define a funcao da policia judiciaria: apurar infracoes penais e autoria."
+    },
+    {
+      "id": 4,
+      "materia": "Legislacao PMBA",
+      "enunciado": "Segundo o Estatuto dos Policiais Militares do Estado da Bahia (Lei nº 7.990/2001), sao a base institucional da Policia Militar:",
+      "alternativas": {"A": "a disciplina e a hierarquia", "B": "a hierarquia e a disciplina", "C": "o comando e a subordinacao", "D": "a etica e a disciplina"},
+      "gabarito": "B",
+      "base_legal": "Art. 3º, Lei nº 7.990/2001",
+      "explicacao": "Redacao literal do art. 3º: 'A hierarquia e a disciplina sao a base institucional da Policia Militar.'"
+    },
+    {
+      "id": 5,
+      "materia": "Direito Penal",
+      "enunciado": "Diz-se o crime tentado quando, iniciada a execucao, nao se consuma por circunstancias alheias a vontade do agente. Esse dispositivo esta previsto em:",
+      "alternativas": {"A": "Art. 14, I", "B": "Art. 14, II", "C": "Art. 15", "D": "Art. 17"},
+      "gabarito": "B",
+      "base_legal": "Art. 14, II, Codigo Penal",
+      "explicacao": "O inciso II do Art. 14 define a tentativa; o inciso I define o crime consumado."
+    },
+    {
+      "id": 6,
+      "materia": "Direito Constitucional",
+      "enunciado": "Segundo o art. 144, §6º da CF/88, as policias militares e corpos de bombeiros militares subordinam-se, juntamente com as policias civis, a(o):",
+      "alternativas": {"A": "Governadores dos Estados, do Distrito Federal e dos Territorios", "B": "Presidente da Republica", "C": "Comandante do Exercito", "D": "Ministerio da Justica"},
+      "gabarito": "A",
+      "base_legal": "Art. 144, §6º, CF/88",
+      "explicacao": "As PMs sao forcas estaduais, subordinadas aos respectivos Governadores."
+    },
+    {
+      "id": 7,
+      "materia": "Processo Penal",
+      "enunciado": "Considera-se em flagrante delito quem: esta cometendo a infracao; acaba de cometê-la; e perseguido, logo apos, em situacao que faca presumir ser o autor; ou e encontrado, logo depois, com instrumentos ou objetos que facam presumir a autoria. Essas hipoteses estao no:",
+      "alternativas": {"A": "Art. 301", "B": "Art. 302", "C": "Art. 310", "D": "Art. 312"},
+      "gabarito": "B",
+      "base_legal": "Art. 302, CPP",
+      "explicacao": "O Art. 302 do CPP traz os quatro incisos que definem as hipoteses de flagrante delito."
+    },
+    {
+      "id": 8,
+      "materia": "Legislacao PMBA",
+      "enunciado": "Segundo o art. 3º, §1º da Lei nº 7.990/2001, a hierarquia policial militar e:",
+      "alternativas": {"A": "o conjunto de normas disciplinares aplicaveis aos pracas", "B": "a organizacao em carreira da autoridade em niveis diferentes, no espirito de acatamento a sequencia de autoridade", "C": "a subordinacao do PM ao seu comandante direto", "D": "a estrutura de comando exclusiva dos oficiais superiores"},
+      "gabarito": "B",
+      "base_legal": "Art. 3º, §1º, Lei nº 7.990/2001",
+      "explicacao": "Redacao literal do §1º do art. 3º do Estatuto da PMBA."
+    },
+    {
+      "id": 9,
+      "materia": "Direito Penal",
+      "enunciado": "Considera-se em legitima defesa quem, usando moderadamente dos meios necessarios, repele injusta agressao, atual ou iminente, a direito seu ou de outrem. Esse conceito esta no:",
+      "alternativas": {"A": "Art. 23, II", "B": "Art. 24", "C": "Art. 25", "D": "Art. 26"},
+      "gabarito": "C",
+      "base_legal": "Art. 25, Codigo Penal",
+      "explicacao": "O Art. 25 conceitua a legitima defesa, uma das excludentes de ilicitude do art. 23."
+    },
+    {
+      "id": 10,
+      "materia": "Direito Constitucional",
+      "enunciado": "'Ninguem sera considerado culpado ate o transito em julgado de sentenca penal condenatoria' e a redacao literal do princípio da presuncao de inocencia, previsto em:",
+      "alternativas": {"A": "Art. 5º, LVII", "B": "Art. 5º, LVIII", "C": "Art. 5º, LXI", "D": "Art. 5º, LXIII"},
+      "gabarito": "A",
+      "base_legal": "Art. 5º, LVII, CF/88",
+      "explicacao": "O inciso LVII do art. 5º consagra a presuncao de inocencia (nao culpabilidade)."
+    },
+    {
+      "id": 11,
+      "materia": "Processo Penal",
+      "enunciado": "A prisao preventiva podera ser decretada como garantia da ordem publica, da ordem economica, por conveniencia da instrucao criminal ou para assegurar a aplicacao da lei penal, quando houver prova do crime e indicio suficiente de autoria. Esta prevista no:",
+      "alternativas": {"A": "Art. 311", "B": "Art. 312", "C": "Art. 313", "D": "Art. 314"},
+      "gabarito": "B",
+      "base_legal": "Art. 312, CPP",
+      "explicacao": "O Art. 312 do CPP traz os fundamentos e requisitos da prisao preventiva."
+    },
+    {
+      "id": 12,
+      "materia": "Legislacao PMBA",
+      "enunciado": "De acordo com o art. 9º da Lei nº 7.990/2001, sao postos de Oficiais da PMBA, EXCETO:",
+      "alternativas": {"A": "Coronel PM", "B": "Tenente Coronel PM", "C": "Subtenente PM", "D": "Capitao PM"},
+      "gabarito": "C",
+      "base_legal": "Art. 9º, Lei nº 7.990/2001",
+      "explicacao": "Subtenente e graduacao de praca, nao posto de oficial. A escala de oficiais vai de Coronel a 1º Tenente."
+    },
+    {
+      "id": 13,
+      "materia": "Direito Penal",
+      "enunciado": "Considera-se em estado de necessidade quem pratica o fato para salvar de perigo atual, que nao provocou por sua vontade, nem podia de outro modo evitar, direito proprio ou alheio, cujo sacrificio, nas circunstancias, nao era razoavel exigir-se. Isso esta previsto em:",
+      "alternativas": {"A": "Art. 23, I", "B": "Art. 24", "C": "Art. 25", "D": "Art. 128"},
+      "gabarito": "B",
+      "base_legal": "Art. 24, Codigo Penal",
+      "explicacao": "O Art. 24 conceitua o estado de necessidade, tambem excludente de ilicitude."
+    },
+    {
+      "id": 14,
+      "materia": "Direito Constitucional",
+      "enunciado": "Segundo o art. 5º, LXI da CF/88, ninguem sera preso senao:",
+      "alternativas": {"A": "por determinacao do Ministerio Publico", "B": "em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciaria competente, salvo transgressao militar ou crime propriamente militar", "C": "mediante simples requisicao policial", "D": "por decisao de autoridade administrativa, em qualquer hipotese"},
+      "gabarito": "B",
+      "base_legal": "Art. 5º, LXI, CF/88",
+      "explicacao": "A regra geral exige flagrante ou ordem judicial fundamentada, com excecao expressa para o ambito militar."
+    },
+    {
+      "id": 15,
+      "materia": "Processo Penal",
+      "enunciado": "A prisao temporaria, cabivel em crimes especificos durante a investigacao policial, e regulada por:",
+      "alternativas": {"A": "Codigo de Processo Penal, art. 300", "B": "Lei nº 7.960/1989", "C": "Lei nº 12.850/2013", "D": "Codigo Penal, art. 41"},
+      "gabarito": "B",
+      "base_legal": "Lei nº 7.960/1989",
+      "explicacao": "A prisao temporaria e disciplinada em lei especial, a Lei nº 7.960/1989, e nao no CPP."
+    },
+    {
+      "id": 16,
+      "materia": "Legislacao PMBA",
+      "enunciado": "Segundo o art. 10 do Estatuto da PMBA, o grau hierarquico do Oficial, conferido por ato do Governador do Estado e registrado em Carta Patente, denomina-se:",
+      "alternativas": {"A": "Graduacao", "B": "Posto", "C": "Precedencia", "D": "Antiguidade"},
+      "gabarito": "B",
+      "base_legal": "Art. 10, Lei nº 7.990/2001",
+      "explicacao": "Posto e o grau do Oficial (Carta Patente); Graduacao e o grau do Praca, conferido pelo Comandante Geral."
+    },
+    {
+      "id": 17,
+      "materia": "Direito Penal",
+      "enunciado": "Quem, de qualquer modo, concorre para o crime incide nas penas a este cominadas, na medida de sua culpabilidade. Esse dispositivo trata:",
+      "alternativas": {"A": "do concurso material de crimes", "B": "do concurso de pessoas", "C": "do concurso formal", "D": "da continuidade delitiva"},
+      "gabarito": "B",
+      "base_legal": "Art. 29, Codigo Penal",
+      "explicacao": "O Art. 29 regula o concurso de pessoas (coautoria e participacao), medindo a pena pela culpabilidade de cada um."
+    },
+    {
+      "id": 18,
+      "materia": "Direito Constitucional",
+      "enunciado": "Conceder-se-a habeas corpus sempre que alguem sofrer ou se achar ameacado de sofrer violencia ou coacao em sua liberdade de locomocao, por ilegalidade ou abuso de poder. Trata-se do remedio previsto no:",
+      "alternativas": {"A": "Art. 5º, LXVIII", "B": "Art. 5º, LXIX", "C": "Art. 5º, LXX", "D": "Art. 5º, LXXII"},
+      "gabarito": "A",
+      "base_legal": "Art. 5º, LXVIII, CF/88",
+      "explicacao": "O habeas corpus protege a liberdade de locomocao e esta previsto no inciso LXVIII."
+    },
+    {
+      "id": 19,
+      "materia": "Processo Penal",
+      "enunciado": "Ao receber o auto de prisao em flagrante, o juiz devera, no prazo de ate 24 horas, promover audiencia de custodia, podendo relaxar a prisao ilegal, converte-la em preventiva ou conceder liberdade provisoria. Essa regra esta prevista no:",
+      "alternativas": {"A": "Art. 306", "B": "Art. 310", "C": "Art. 311", "D": "Art. 316"},
+      "gabarito": "B",
+      "base_legal": "Art. 310, CPP",
+      "explicacao": "O Art. 310 do CPP disciplina as providencias do juiz apos o recebimento do auto de prisao em flagrante."
+    },
+    {
+      "id": 20,
+      "materia": "Legislacao PMBA",
+      "enunciado": "Conforme o art. 16 da Lei nº 7.990/2001, os policiais militares na inatividade encontram-se em uma das seguintes situacoes:",
+      "alternativas": {"A": "reserva remunerada e reformados", "B": "agregados e excedentes", "C": "convocados e ausentes", "D": "reserva remunerada e reserva nao remunerada"},
+      "gabarito": "A",
+      "base_legal": "Art. 16, II, Lei nº 7.990/2001",
+      "explicacao": "Na inatividade estao os da reserva remunerada e os reformados; a reserva nao remunerada e categoria a parte (inciso III)."
+    },
+    {
+      "id": 21,
+      "materia": "Direito Penal",
+      "enunciado": "E correto afirmar sobre o crime de homicidio, previsto no art. 121 do Codigo Penal:",
+      "alternativas": {"A": "e crime formal, que independe do resultado morte", "B": "e crime material, que se consuma com a morte da vitima", "C": "admite apenas a forma culposa", "D": "nao admite a forma tentada"},
+      "gabarito": "B",
+      "base_legal": "Art. 121, Codigo Penal",
+      "explicacao": "O homicidio e crime material: exige o resultado morte para se consumar, e admite tentativa."
+    },
+    {
+      "id": 22,
+      "materia": "Direito Constitucional",
+      "enunciado": "Conceder-se-a mandado de seguranca para proteger direito liquido e certo, nao amparado por habeas corpus ou habeas data, quando o responsavel pela ilegalidade ou abuso de poder for autoridade publica ou agente de pessoa juridica no exercicio de atribuicoes do Poder Publico. E o previsto no:",
+      "alternativas": {"A": "Art. 5º, LXVIII", "B": "Art. 5º, LXIX", "C": "Art. 5º, LXXII", "D": "Art. 5º, LXXIII"},
+      "gabarito": "B",
+      "base_legal": "Art. 5º, LXIX, CF/88",
+      "explicacao": "O mandado de seguranca e residual: cabe quando nao ha protecao especifica por HC ou habeas data."
+    },
+    {
+      "id": 23,
+      "materia": "Processo Penal",
+      "enunciado": "Aos litigantes, em processo judicial ou administrativo, e aos acusados em geral sao assegurados o contraditorio e ampla defesa, com os meios e recursos a ela inerentes. Esse principio esta previsto na CF/88 em:",
+      "alternativas": {"A": "Art. 5º, LIV", "B": "Art. 5º, LV", "C": "Art. 5º, LVI", "D": "Art. 5º, LVII"},
+      "gabarito": "B",
+      "base_legal": "Art. 5º, LV, CF/88",
+      "explicacao": "O inciso LV garante contraditorio e ampla defesa em processos judiciais e administrativos."
+    },
+    {
+      "id": 24,
+      "materia": "Legislacao PMBA",
+      "enunciado": "E aquele afastado do servico que, nessa situacao, percebe remuneracao do Estado, ficando sujeito a acao disciplinar da Instituicao e a prestacao de servicos na ativa. Trata-se do policial militar:",
+      "alternativas": {"A": "reformado", "B": "da reserva remunerada", "C": "agregado", "D": "excedente"},
+      "gabarito": "B",
+      "base_legal": "Art. 32, Lei nº 7.990/2001",
+      "explicacao": "O reformado (art. 33) esta dispensado definitivamente do servico; o da reserva remunerada (art. 32) pode ser convocado."
+    },
+    {
+      "id": 25,
+      "materia": "Direito Penal",
+      "enunciado": "A diferenca essencial entre furto e roubo esta em que o roubo:",
+      "alternativas": {"A": "so pode ser praticado contra veiculo automotor", "B": "emprega violencia ou grave ameaca, ou reduz a vitima a impossibilidade de resistencia", "C": "exige o concurso de duas ou mais pessoas", "D": "nao admite a forma tentada"},
+      "gabarito": "B",
+      "base_legal": "Art. 155 e Art. 157, Codigo Penal",
+      "explicacao": "O roubo (art. 157) se distingue do furto (art. 155) pelo emprego de violencia, grave ameaca ou reducao a impossibilidade de resistencia."
+    },
+    {
+      "id": 26,
+      "materia": "Direito Constitucional",
+      "enunciado": "Nao sera objeto de deliberacao proposta de emenda constitucional tendente a abolir, conforme o art. 60, §4º da CF/88, EXCETO:",
+      "alternativas": {"A": "a forma federativa de Estado", "B": "a legislacao infraconstitucional ordinaria", "C": "o voto direto, secreto, universal e periodico", "D": "a separacao dos Poderes"},
+      "gabarito": "B",
+      "base_legal": "Art. 60, §4º, CF/88",
+      "explicacao": "As clausulas petreas sao forma federativa, voto direto/secreto/universal/periodico, separacao dos Poderes e direitos e garantias individuais; lei ordinaria pode ser alterada livremente."
+    },
+    {
+      "id": 27,
+      "materia": "Processo Penal",
+      "enunciado": "Nos crimes de acao publica, esta sera promovida por:",
+      "alternativas": {"A": "iniciativa do ofendido", "B": "denuncia do Ministerio Publico", "C": "queixa-crime", "D": "portaria da autoridade policial"},
+      "gabarito": "B",
+      "base_legal": "Art. 24, CPP",
+      "explicacao": "A acao penal publica e privativa do Ministerio Publico, exercida por meio de denuncia."
+    },
+    {
+      "id": 28,
+      "materia": "Legislacao PMBA",
+      "enunciado": "E o policial militar dispensado definitivamente da prestacao do servico ativo, percebendo remuneracao pelo Estado e permanecendo sujeito ao controle disciplinar da Instituicao. Trata-se do:",
+      "alternativas": {"A": "policial militar reformado", "B": "policial militar da reserva nao remunerada", "C": "policial militar agregado", "D": "policial militar excedente"},
+      "gabarito": "A",
+      "base_legal": "Art. 33, Lei nº 7.990/2001",
+      "explicacao": "Redacao literal do art. 33 do Estatuto da PMBA sobre o policial militar reformado."
+    },
+    {
+      "id": 29,
+      "materia": "Direito Penal",
+      "enunciado": "Apropriar-se o funcionario publico de dinheiro, valor ou qualquer outro bem movel, publico ou particular, de que tem a posse em razao do cargo, ou desvia-lo, em proveito proprio ou alheio, caracteriza o crime de:",
+      "alternativas": {"A": "Concussao", "B": "Peculato", "C": "Corrupcao passiva", "D": "Prevaricacao"},
+      "gabarito": "B",
+      "base_legal": "Art. 312, Codigo Penal",
+      "explicacao": "O peculato (art. 312) exige a posse licita do bem em razao do cargo, com apropriacao ou desvio."
+    },
+    {
+      "id": 30,
+      "materia": "Direito Constitucional",
+      "enunciado": "O Presidente da Republica pode, ouvidos o Conselho da Republica e o Conselho de Defesa Nacional, decretar estado de defesa para preservar ou restabelecer, em locais restritos e determinados, a ordem publica ou a paz social ameacadas por grave instabilidade institucional ou calamidades de grandes proporcoes na natureza. Isso esta previsto no:",
+      "alternativas": {"A": "Art. 34", "B": "Art. 136", "C": "Art. 137", "D": "Art. 142"},
+      "gabarito": "B",
+      "base_legal": "Art. 136, CF/88",
+      "explicacao": "O Art. 136 disciplina o estado de defesa; o estado de sitio, mais grave, esta no art. 137."
+    },
+    {
+      "id": 31,
+      "materia": "Processo Penal",
+      "enunciado": "Sao medidas cautelares diversas da prisao previstas no art. 319 do CPP, EXCETO:",
+      "alternativas": {"A": "comparecimento periodico em juizo", "B": "proibicao de acesso ou frequencia a determinados lugares", "C": "prisao preventiva", "D": "monitoracao eletronica"},
+      "gabarito": "C",
+      "base_legal": "Art. 319, CPP",
+      "explicacao": "A prisao preventiva nao e medida 'diversa da prisao' - ela e a propria prisao cautelar."
+    },
+    {
+      "id": 32,
+      "materia": "Legislacao PMBA",
+      "enunciado": "Segundo o art. 35 da Lei nº 7.990/2001, o policial militar habilitado em concurso publico e nomeado para cargo de carreira adquire estabilidade ao completar:",
+      "alternativas": {"A": "1 ano de efetivo exercicio", "B": "2 anos de efetivo exercicio", "C": "3 anos de efetivo exercicio", "D": "5 anos de efetivo exercicio"},
+      "gabarito": "C",
+      "base_legal": "Art. 35, Lei nº 7.990/2001",
+      "explicacao": "A estabilidade e adquirida aos 3 anos de efetivo exercicio, apos aprovacao no estagio probatorio."
+    },
+    {
+      "id": 33,
+      "materia": "Direito Penal",
+      "enunciado": "Ninguem pode ser punido por fato que lei posterior deixa de considerar crime, cessando em virtude dela a execucao e os efeitos penais da sentenca condenatoria. Esse instituto e chamado de:",
+      "alternativas": {"A": "Novatio legis in pejus", "B": "Abolitio criminis", "C": "Continuidade normativo-tipica", "D": "Retroatividade maleficia"},
+      "gabarito": "B",
+      "base_legal": "Art. 2º, caput, Codigo Penal",
+      "explicacao": "A abolitio criminis ocorre quando lei nova descriminaliza uma conduta, retroagindo em beneficio do reu."
+    },
+    {
+      "id": 34,
+      "materia": "Direito Constitucional",
+      "enunciado": "As Forcas Armadas, constituidas pela Marinha, pelo Exercito e pela Aeronautica, sao instituicoes nacionais permanentes e regulares, organizadas com base na hierarquia e na disciplina, sob a autoridade suprema de(o):",
+      "alternativas": {"A": "Ministro da Defesa", "B": "Presidente da Republica", "C": "Congresso Nacional", "D": "Superior Tribunal Militar"},
+      "gabarito": "B",
+      "base_legal": "Art. 142, caput, CF/88",
+      "explicacao": "O Presidente da Republica e o comandante supremo das Forcas Armadas, conforme o art. 142."
+    },
+    {
+      "id": 35,
+      "materia": "Processo Penal",
+      "enunciado": "A competencia sera, de regra, determinada pelo lugar em que se consumar a infracao, ou, no caso de tentativa, pelo lugar em que for praticado o ultimo ato de execucao. Essa regra esta no:",
+      "alternativas": {"A": "Art. 69", "B": "Art. 70", "C": "Art. 78", "D": "Art. 83"},
+      "gabarito": "B",
+      "base_legal": "Art. 70, caput, CPP",
+      "explicacao": "O Art. 70 fixa a regra geral de competencia territorial: local da consumacao (teoria do resultado)."
+    },
+    {
+      "id": 36,
+      "materia": "Legislacao PMBA",
+      "enunciado": "O estagio probatorio do policial militar da PMBA, durante o qual se observam assiduidade, disciplina, responsabilidade e eficiencia, compreende um periodo de:",
+      "alternativas": {"A": "12 meses", "B": "24 meses", "C": "30 meses", "D": "36 meses"},
+      "gabarito": "D",
+      "base_legal": "Art. 36, Lei nº 7.990/2001",
+      "explicacao": "O estagio probatorio compreende 36 meses, coincidindo com o prazo para aquisicao de estabilidade (3 anos)."
+    },
+    {
+      "id": 37,
+      "materia": "Direito Penal",
+      "enunciado": "Sao causas de extincao da punibilidade previstas no art. 107 do Codigo Penal, EXCETO:",
+      "alternativas": {"A": "morte do agente", "B": "anistia, graca ou indulto", "C": "legitima defesa", "D": "prescricao"},
+      "gabarito": "C",
+      "base_legal": "Art. 107, Codigo Penal",
+      "explicacao": "Legitima defesa e excludente de ilicitude (art. 23), nao causa de extincao da punibilidade."
+    },
+    {
+      "id": 38,
+      "materia": "Direito Constitucional",
+      "enunciado": "Constitui objetivo fundamental da Republica Federativa do Brasil, previsto no art. 3º da CF/88:",
+      "alternativas": {"A": "manter relacoes com todos os povos", "B": "construir uma sociedade livre, justa e solidaria", "C": "conceder asilo politico", "D": "repudio ao terrorismo"},
+      "gabarito": "B",
+      "base_legal": "Art. 3º, I, CF/88",
+      "explicacao": "As demais alternativas sao principios que regem as relacoes internacionais do Brasil (art. 4º), nao objetivos fundamentais."
+    },
+    {
+      "id": 39,
+      "materia": "Processo Penal",
+      "enunciado": "A busca domiciliar sera decretada para apreender coisas achadas ou obtidas por meios criminosos, ou para colher qualquer elemento de convicção, entre outras hipoteses previstas em lei. Esta prevista no:",
+      "alternativas": {"A": "Art. 240", "B": "Art. 244", "C": "Art. 250", "D": "Art. 260"},
+      "gabarito": "A",
+      "base_legal": "Art. 240, CPP",
+      "explicacao": "O Art. 240 do CPP lista as hipoteses que autorizam a busca domiciliar."
+    },
+    {
+      "id": 40,
+      "materia": "Legislacao PMBA",
+      "enunciado": "Sao deveres policiais militares previstos no art. 41 do Estatuto da PMBA, EXCETO:",
+      "alternativas": {"A": "a disciplina e o respeito a hierarquia", "B": "a dedicacao integral ao servico e a fidelidade a Instituicao", "C": "a participacao em atividade politico-partidaria durante a atividade", "D": "a assiduidade e pontualidade ao servico"},
+      "gabarito": "C",
+      "base_legal": "Art. 41, Lei nº 7.990/2001",
+      "explicacao": "A atividade politico-partidaria na ativa e vedada pela etica policial militar (art. 39), nao e um dever."
+    },
+    {
+      "id": 41,
+      "materia": "Direito Penal",
+      "enunciado": "Um agente assume o risco de produzir o resultado, embora nao o queira diretamente. Essa modalidade e chamada de:",
+      "alternativas": {"A": "Culpa consciente", "B": "Dolo eventual", "C": "Culpa impropria", "D": "Preterdolo"},
+      "gabarito": "B",
+      "base_legal": "Art. 18, I, parte final, Codigo Penal",
+      "explicacao": "No dolo eventual o agente aceita o risco do resultado; na culpa consciente ele acredita, sinceramente, que pode evita-lo."
+    },
+    {
+      "id": 42,
+      "materia": "Direito Constitucional",
+      "enunciado": "Segundo o art. 144, caput, da CF/88, a seguranca publica e dever do Estado, direito e responsabilidade de todos, exercida para a preservacao da ordem publica e da incolumidade das pessoas e do patrimonio atraves de orgaos elencados no proprio artigo. NAO integra esse rol constitucional:",
+      "alternativas": {"A": "Policia Federal", "B": "Policias Militares e Corpos de Bombeiros Militares", "C": "Policias Civis", "D": "Guarda Nacional"},
+      "gabarito": "D",
+      "base_legal": "Art. 144, CF/88",
+      "explicacao": "'Guarda Nacional' nao existe no rol do art. 144; ha, isso sim, as guardas municipais (art. 144, §8º)."
+    },
+    {
+      "id": 43,
+      "materia": "Processo Penal",
+      "enunciado": "O reu solto sera citado pessoalmente e, nao sendo encontrado, sera citado por edital. A citacao por edital e uma espécie de citacao:",
+      "alternativas": {"A": "Real", "B": "Ficta", "C": "Direta", "D": "Ordinaria"},
+      "gabarito": "B",
+      "base_legal": "Arts. 351 e seguintes, CPP",
+      "explicacao": "A citacao por edital e uma citacao ficta (presumida), usada quando o reu nao e localizado."
+    },
+    {
+      "id": 44,
+      "materia": "Legislacao PMBA",
+      "enunciado": "Sao sancoes disciplinares a que estao sujeitos os policiais militares da Bahia, conforme o art. 52 da Lei nº 7.990/2001:",
+      "alternativas": {"A": "advertencia, suspensao e demissao", "B": "advertencia, detencao e demissao", "C": "repreensao, detencao e expulsao", "D": "advertencia, prisao e exclusao"},
+      "gabarito": "B",
+      "base_legal": "Art. 52, Lei nº 7.990/2001",
+      "explicacao": "O Estatuto da PMBA prevé tres sancoes disciplinares: advertencia, detencao e demissao."
+    },
+    {
+      "id": 45,
+      "materia": "Direito Penal",
+      "enunciado": "Quando o agente, mediante uma so acao ou omissao, pratica dois ou mais crimes, identicos ou nao, aplica-se a regra do:",
+      "alternativas": {"A": "concurso material", "B": "concurso formal", "C": "crime continuado", "D": "cumulo material obrigatorio"},
+      "gabarito": "B",
+      "base_legal": "Art. 70, Codigo Penal",
+      "explicacao": "O concurso formal (art. 70 CP) ocorre quando uma so conduta produz dois ou mais resultados criminosos."
+    },
+    {
+      "id": 46,
+      "materia": "Direito Constitucional",
+      "enunciado": "Sao direitos sociais previstos no art. 6º da CF/88: educacao, saude, alimentacao, trabalho, moradia, transporte, lazer, seguranca, previdencia social, protecao a maternidade e a infancia e assistencia aos desamparados. A inclusao do 'transporte' nesse rol se deu por meio da:",
+      "alternativas": {"A": "Emenda Constitucional nº 90/2015", "B": "redacao originaria da Constituicao, sem alteracoes", "C": "lei ordinaria federal", "D": "sumula vinculante do STF"},
+      "gabarito": "A",
+      "base_legal": "Art. 6º, CF/88 (redacao dada pela EC nº 90/2015)",
+      "explicacao": "O direito social ao 'transporte' foi incluido no art. 6º pela Emenda Constitucional nº 90, de 2015."
+    },
+    {
+      "id": 47,
+      "materia": "Processo Penal",
+      "enunciado": "Cabe apelacao das sentencas definitivas de condenacao ou absolvicao proferidas por juiz singular, nos termos do:",
+      "alternativas": {"A": "Art. 581", "B": "Art. 593", "C": "Art. 619", "D": "Art. 638"},
+      "gabarito": "B",
+      "base_legal": "Art. 593, CPP",
+      "explicacao": "O Art. 593 do CPP disciplina o cabimento do recurso de apelacao."
+    },
+    {
+      "id": 48,
+      "materia": "Legislacao PMBA",
+      "enunciado": "A sancao disciplinar de detencao, prevista no Estatuto da PMBA, nao pode exceder:",
+      "alternativas": {"A": "15 dias", "B": "30 dias", "C": "60 dias", "D": "90 dias"},
+      "gabarito": "B",
+      "base_legal": "Art. 55, Lei nº 7.990/2001",
+      "explicacao": "A detencao e aplicada em caso de reincidencia em faltas punidas com advertencia, com limite maximo de 30 dias."
+    },
+    {
+      "id": 49,
+      "materia": "Direito Penal",
+      "enunciado": "E isento de pena o agente que, por doenca mental ou desenvolvimento mental incompleto ou retardado, era, ao tempo da acao ou omissao, inteiramente incapaz de entender o carater ilicito do fato. Trata-se da:",
+      "alternativas": {"A": "Semi-imputabilidade", "B": "Inimputabilidade", "C": "Coacao irresistivel", "D": "Obediencia hierarquica"},
+      "gabarito": "B",
+      "base_legal": "Art. 26, caput, Codigo Penal",
+      "explicacao": "A inimputabilidade (art. 26, caput) isenta de pena; a semi-imputabilidade (paragrafo unico) apenas reduz a pena."
+    },
+    {
+      "id": 50,
+      "materia": "Direito Constitucional",
+      "enunciado": "As policias militares cabem a policia ostensiva e a preservacao da ordem publica; aos corpos de bombeiros militares, alem das atribuicoes definidas em lei, incumbe a execucao de atividades de defesa civil. Isso esta previsto no art. 144:",
+      "alternativas": {"A": "§4º", "B": "§5º", "C": "§6º", "D": "§7º"},
+      "gabarito": "B",
+      "base_legal": "Art. 144, §5º, CF/88",
+      "explicacao": "O §5º do art. 144 define as atribuicoes especificas das policias militares e dos corpos de bombeiros militares."
+    },
+    {
+      "id": 51,
+      "materia": "Processo Penal",
+      "enunciado": "Ausentes os requisitos que autorizam a decretacao da prisao preventiva, o juiz devera conceder liberdade provisoria, impondo, se for o caso, as medidas cautelares diversas da prisao. Esta previsto no:",
+      "alternativas": {"A": "Art. 310", "B": "Art. 319", "C": "Art. 321", "D": "Art. 350"},
+      "gabarito": "C",
+      "base_legal": "Art. 321, CPP",
+      "explicacao": "O Art. 321 do CPP determina a concessao de liberdade provisoria quando ausentes os requisitos da preventiva."
+    },
+    {
+      "id": 52,
+      "materia": "Legislacao PMBA",
+      "enunciado": "O Regulamento Disciplinar da Policia Militar da Bahia (RDPM), que classifica as transgressoes disciplinares e disciplina a aplicacao das punicoes, foi instituido por:",
+      "alternativas": {"A": "Lei nº 7.990/2001", "B": "Decreto Estadual nº 29.535/1983", "C": "Decreto-Lei nº 667/1969", "D": "Lei Complementar nº 20/2003"},
+      "gabarito": "B",
+      "base_legal": "Decreto Estadual nº 29.535/1983",
+      "explicacao": "O RDPM foi instituido pelo Decreto nº 29.535/1983 e ainda vigora, complementando a Lei nº 7.990/2001."
+    },
+    {
+      "id": 53,
+      "materia": "Direito Penal",
+      "enunciado": "A prescricao, antes de transitar em julgado a sentenca final, regula-se pelo maximo da pena privativa de liberdade cominada ao crime. Essa regra consta do:",
+      "alternativas": {"A": "Art. 109, caput", "B": "Art. 110", "C": "Art. 115", "D": "Art. 107"},
+      "gabarito": "A",
+      "base_legal": "Art. 109, caput, Codigo Penal",
+      "explicacao": "Antes do transito em julgado, a prescricao (prescricao da pretensao punitiva) usa a pena maxima em abstrato."
+    },
+    {
+      "id": 54,
+      "materia": "Direito Constitucional",
+      "enunciado": "Conceder-se-a habeas data para assegurar o conhecimento de informacoes relativas a pessoa do impetrante, constantes de registros ou bancos de dados de entidades governamentais ou de carater publico, e para a retificacao de dados. Esta previsto no:",
+      "alternativas": {"A": "Art. 5º, LXX", "B": "Art. 5º, LXXI", "C": "Art. 5º, LXXII", "D": "Art. 5º, LXXIII"},
+      "gabarito": "C",
+      "base_legal": "Art. 5º, LXXII, CF/88",
+      "explicacao": "O habeas data e o remedio constitucional que garante acesso e retificacao de dados pessoais em bancos publicos."
+    },
+    {
+      "id": 55,
+      "materia": "Processo Penal",
+      "enunciado": "A prisao cautelar (preventiva ou temporaria), decretada antes do transito em julgado, nao viola o principio da presuncao de inocencia porque:",
+      "alternativas": {"A": "e uma antecipacao de pena", "B": "tem natureza processual e cautelar, nao configurando execucao antecipada de pena", "C": "e aplicada automaticamente em todo flagrante", "D": "substitui a necessidade de processo"},
+      "gabarito": "B",
+      "base_legal": "Art. 312, CPP c/c Art. 5º, LVII, CF/88",
+      "explicacao": "A prisao cautelar exige requisitos proprios (fumus comissi delicti e periculum libertatis) e nao antecipa o julgamento de merito."
+    },
+    {
+      "id": 56,
+      "materia": "Legislacao PMBA",
+      "enunciado": "As penalidades de advertencia e de detencao terao seus registros cancelados, se o policial militar nao praticar nova infracao, apos o decurso de, respectivamente:",
+      "alternativas": {"A": "1 e 2 anos", "B": "2 e 4 anos", "C": "3 e 5 anos", "D": "1 e 3 anos"},
+      "gabarito": "B",
+      "base_legal": "Art. 56, Lei nº 7.990/2001",
+      "explicacao": "O cancelamento do registro ocorre em 2 anos para advertencia e 4 anos para detencao, sem efeito retroativo."
+    },
+    {
+      "id": 57,
+      "materia": "Direito Penal",
+      "enunciado": "Exigir, para si ou para outrem, direta ou indiretamente, ainda que fora da funcao ou antes de assumi-la, mas em razao dela, vantagem indevida, caracteriza o crime de:",
+      "alternativas": {"A": "Corrupcao passiva", "B": "Concussao", "C": "Corrupcao ativa", "D": "Prevaricacao"},
+      "gabarito": "B",
+      "base_legal": "Art. 316, Codigo Penal",
+      "explicacao": "A concussao (art. 316) se caracteriza pelo verbo 'exigir'; a corrupcao passiva (art. 317) e 'solicitar, receber ou aceitar promessa'."
+    },
+    {
+      "id": 58,
+      "materia": "Direito Constitucional",
+      "enunciado": "Aos integrantes do rol do art. 144 da CF/88, cabe destacar que a atividade de policia judiciaria da Uniao e a apuracao de infracoes penais contra a ordem politica e social, ou em detrimento de bens, servicos e interesses da Uniao, sao atribuicoes de qual orgao?",
+      "alternativas": {"A": "Policia Rodoviaria Federal", "B": "Policia Federal", "C": "Policia Civil", "D": "Policia Militar"},
+      "gabarito": "B",
+      "base_legal": "Art. 144, §1º, CF/88",
+      "explicacao": "A Policia Federal, orgao permanente organizado e mantido pela Uniao, exerce policia judiciaria federal, conforme §1º do art. 144."
+    },
+    {
+      "id": 59,
+      "materia": "Processo Penal",
+      "enunciado": "Nos crimes de acao publica, o inquerito policial sera iniciado, EXCETO:",
+      "alternativas": {"A": "de oficio", "B": "mediante requisicao da autoridade judiciaria ou do Ministerio Publico", "C": "a requerimento da vitima", "D": "por decisao exclusiva da autoridade policial em crimes de acao privada, independente de requerimento"},
+      "gabarito": "D",
+      "base_legal": "Art. 5º, CPP",
+      "explicacao": "Nos crimes de acao privada, o IP so pode ser iniciado mediante requerimento de quem tenha qualidade para exercer a acao penal."
+    },
+    {
+      "id": 60,
+      "materia": "Legislacao PMBA",
+      "enunciado": "A situacao na qual o policial militar da ativa deixa de ocupar vaga na escala hierarquica de seu Quadro, nela permanecendo sem numero, denomina-se:",
+      "alternativas": {"A": "Exclusao", "B": "Agregacao", "C": "Exoneracao", "D": "Licenciamento"},
+      "gabarito": "B",
+      "base_legal": "Art. 21, Lei nº 7.990/2001",
+      "explicacao": "A agregacao ocorre, por exemplo, quando o PM esta afastado por saude, licenca ou nomeado para cargo fora do quadro."
+    }
+  ]
+}
